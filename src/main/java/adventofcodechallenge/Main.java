@@ -1,4 +1,4 @@
-package blub;
+package adventofcodechallenge;
 
 public class Main {
     public static void main(String[] args) {
