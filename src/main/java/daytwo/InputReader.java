@@ -31,6 +31,26 @@ public class InputReader {
             System.err.println("Could not read File.");
             e.printStackTrace();
         }
+
+        // Gehe jede einzelne input zeile durch:
+        //  1. "Game [index] :" herausnehmen
+        //   restlichen string unterteilen mit ";" als trenn-zeichen
+        //      jedes string als jason format einlesen mit keys (red,green,blue) und anzahl als value
+        // => die aufgeteilten jsons in übergordnete json einlesen mit game als key und string array jssons als value
         return result;
+    /*
+        Beispiel:
+    json: {
+        "1": [
+            { Red: 1, Green: 2, Blue: 3},
+            { Red: 1, Green: 2, Blue: 3}
+        ],
+        "2": [
+            { Red: 1, Green: 2, Blue: 3},
+            { Red: 1, Green: 2, Blue: 3}
+        ]
+    }
+
+    */
     };
 }
