@@ -3,6 +3,7 @@ package adventofcodechallenge;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import dayone.CalibrationValue;
+import daytwo.GameValidation;
 
 public class Main {
 
@@ -16,7 +17,8 @@ public class Main {
     }
 
     private static void solveDayTwo() {
-        Path path = Paths.get("src/main/java/daytwo/testinputdatwo.txt");
+        //Path path = Paths.get("src/main/java/daytwo/testinputdatwo.txt");
+        Path path = Paths.get("src/main/java/daytwo/inputdaytwo.txt");
         if (!path.toFile().exists()) {
             System.err.println("File not found!");
             System.exit(1);
@@ -24,7 +26,10 @@ public class Main {
         String input = path.toAbsolutePath().toString();
 
         daytwo.InputReader ir = new daytwo.InputReader(input);
-        ir.readInput();
+
+        GameValidation gValidation = new GameValidation(ir.readInput());
+
+        System.out.println(gValidation.sumOfGames());
     }
 
     private static void solveDayOne() {
